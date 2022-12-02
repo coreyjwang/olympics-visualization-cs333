@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Olympics Visualization</title>
+    <meta property="og:title" content="Active Online Software Page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #5128f5;//magic
+       }
+    </style>
+    <style data-section-id="dropdown">
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+      <script
+        type="text/javascript"
+        src="https://unpkg.com/dangerous-html@0.1.11/dist/default/lib.umd.js"
+      ></script>
+
+      <div class="home-container">
+        <section id="home" class="home-hero">
+          <nav class="home-centered">
+            <div class="home-right">
+              <div id="open-mobile-menu" class="home-burger-menu">
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-yxbd.svg"
+                  class="home-mobile-menu-button"
+                />
+              </div>
+            </div>
+            <div data-thq="thq-dropdown" class="home-thq-dropdown list-item">
+              <div data-thq="thq-dropdown-toggle" class="home-dropdown-toggle">
+                <span class="home-text">Contents</span>
+                <div
+                  data-thq="thq-dropdown-arrow"
+                  class="home-dropdown-arrow"
+                ></div>
+              </div>
+              <ul data-thq="thq-dropdown-list" class="home-dropdown-list">
+                <li data-thq="thq-dropdown" class="home-dropdown list-item">
+                  <a href="#home">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="home-dropdown-toggle1"
+                    >
+                      <span class="home-text001">Home</span>
+                    </div>
+                  </a>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown1 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle2"
+                  >
+                    <a href="#dataset" class="home-link01">Dataset</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown2 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle3"
+                  >
+                    <a href="#o1896" class="home-link02">1896</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown3 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle4"
+                  >
+                    <a href="#o1924" class="home-link03">1924</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown4 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle5"
+                  >
+                    <a href="#o1948" class="home-link04">1948</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown5 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle6"
+                  >
+                    <a href="#o1980" class="home-link05">1980</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown6 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle7"
+                  >
+                    <a href="#dashboard" class="home-link06">Dashboard</a>
+                  </div>
+                </li>
+                <li data-thq="thq-dropdown" class="home-dropdown7 list-item">
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="home-dropdown-toggle8"
+                  >
+                    <a href="#references" class="home-link07">References</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="home-container1">
+            <header class="home-header"></header>
+          </div>
+          <img
+            alt="pastedImage"
+            src="public/playground_assets/pastedimage-ppp-300h.png"
+            class="home-pasted-image"
+          />
+          <h1 class="home-text002">120 Years of Olympic History</h1>
+          <h2 class="home-text003">Team Figma</h2>
+          <span class="home-text004">
+            <span>
+              In this project, we narrate some historically significant years as
+              well as show how these events manifested in Olympic Data. We also
+              walk you through how to use our Tableau dashboard to achieve the
+              visualizations we use.
+            </span>
+            <br />
+            <br />
+            <span>
+              Our interactive Tableau dashboard is included for you to explore
+              any years we may not have narrated!
+            </span>
+            <br />
+          </span>
+        </section>
+        <section id="dataset" class="home-features">
+          <span class="home-text010">Dataset Overview</span>
+          <span class="home-text011">
+            <span class="home-text012">
+              The Olympics dataset is sourced from
+            </span>
+            <a
+              href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link08"
+            >
+              Kaggle
+            </a>
+            <span class="home-text013">
+              , spanning the games from&nbsp;Athens 1896 to Rio 2016.
+            </span>
+            <br />
+            <br />
+            <span>
+              Each time an athlete competes in the Olympics corresponds to one
+              row of the dataset.
+            </span>
+            <br />
+            <span>
+              (regardless of medal status). There are&nbsp;271,116 rows total.
+            </span>
+            <br />
+            <br />
+            <span>The columns are listed below:</span>
+            <br />
+          </span>
+          <img
+            alt="pastedImage"
+            src="public/playground_assets/pastedimage-yve-300w.png"
+            class="home-pasted-image01"
+          />
+        </section>
+        <section class="home-statistics">
+          <div class="home-container2">
+            <div class="active-users-active-users metrics">
+              <span class="active-users-text"><span>35</span></span>
+              <span class="active-users-text1">
+                <span>— Distinct years</span>
+              </span>
+            </div>
+            <div class="active-users-active-users metrics">
+              <span class="active-users-text"><span>230</span></span>
+              <span class="active-users-text1">
+                <span>— Countries represented</span>
+              </span>
+            </div>
+            <div class="active-users-active-users metrics">
+              <span class="active-users-text"><span>765</span></span>
+              <span class="active-users-text1">
+                <span>— Unique events</span>
+              </span>
+            </div>
+            <div class="active-users-active-users metrics">
+              <span class="active-users-text"><span>134,732</span></span>
+              <span class="active-users-text1">
+                <span>— Unique athletes</span>
+              </span>
+            </div>
+          </div>
+        </section>
+        <section id="o1896" class="home-quote-container">
+          <div class="home-container3">
+            <div class="home-left">
+              <span class="sub-title">The advent of the Olympics</span>
+              <span class="home-text024 title">1896</span>
+              <span class="home-text025">
+                <span>
+                  Hosted in Athens, Greece, the first Olympics are far removed
+                  from the modern day Olympics.
+                </span>
+                <br />
+                <br />
+                <span>Fewer than 20 teams participated in 43 events.</span>
+                <br />
+                <br />
+                <span>Over 65% of the participants were Greek.</span>
+                <br />
+                <br />
+              </span>
+            </div>
+            <div class="home-image-container">
+              <div class="home-category">
+                <div class="home-headng">
+                  <span class="home-text035">Medal composition</span>
+                  <span class="home-text036">
+                    <span>
+                      Moving the "Select Year" slider all the way to the left at
+                      1896, we can see the medal composition for the games in
+                      this year.
+                    </span>
+                    <br />
+                    <br />
+                    <span>Unsurprisingly, Greece sweeps the podium.</span>
+                  </span>
+                </div>
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-nyc7-300h.png"
+                  class="home-pasted-image02"
+                />
+              </div>
+            </div>
+          </div>
+          <img
+            alt="pastedImage"
+            src="public/playground_assets/pastedimage-wqei-300h.png"
+            class="home-pasted-image03"
+          />
+        </section>
+        <section class="home-banners">
+          <div id="o1924" class="home-banner-manage">
+            <div class="home-headng1">
+              <div class="home-category1">
+                <div class="home-headng2">
+                  <span class="home-text041">Competitor Map</span>
+                  <span class="home-text042">
+                    <span>
+                      With the 9 sports of this winter Games selected in the
+                      sport filter and the medal filter set to "All", we can see
+                      what countries were represented.
+                    </span>
+                    <br />
+                    <br />
+                    <span>As expected, Germany had no athletes competing.</span>
+                  </span>
+                </div>
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-5ax-300h.png"
+                  class="home-pasted-image04"
+                />
+              </div>
+            </div>
+            <div class="home-container4">
+              <div class="home-container5">
+                <div class="home-left1">
+                  <span class="sub-title">The first winter games</span>
+                  <span class="home-text048 title">1924</span>
+                  <span class="home-text049">
+                    <span>
+                      In 1924, the first Olympic Winter games were hosted in
+                      Chamonix, France with nine distinct events.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      Germany was banned from participating, following the
+                      events of World War 1.
+                    </span>
+                    <br />
+                  </span>
+                </div>
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-dq1-500w.png"
+                  class="home-pasted-image05"
+                />
+              </div>
+              <div class="home-image-container1"></div>
+            </div>
+          </div>
+          <div id="o1948" class="home-banner-advanced-analytics">
+            <div class="home-right1">
+              <span class="sub-title">"The Austerity Games"</span>
+              <h2 class="home-text056 title">1948</h2>
+              <div class="home-category2">
+                <span class="home-text057">
+                  <span>
+                    Dubbed “The Austerity Games”, the 1948 Olympics were hosted
+                    in old venues in London.&nbsp;
+                  </span>
+                  <span>
+                    Germany and Japan were not invited to participate, following
+                    the events of World War 2.
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    For the first Olympics, Czechoslovakian athlete Marie
+                    Provazníková refused to return home, citing lack of freedom
+                    under the Soviet bloc.
+                  </span>
+                  <br />
+                </span>
+              </div>
+              <img
+                alt="pastedImage"
+                src="public/playground_assets/pastedimage-xa-500w.png"
+                class="home-pasted-image06"
+              />
+            </div>
+            <div class="home-category3">
+              <div class="home-headng3">
+                <span class="home-text064">Gold Medals</span>
+                <span class="home-text065">
+                  Moving the year slider to 1948, and setting the "Filter by
+                  Medal" to "Gold", a user can see the choropleth map and bar
+                  chart of gold medals for this year.
+                </span>
+              </div>
+              <img
+                alt="pastedImage"
+                src="public/playground_assets/pastedimage-2gx4-300h.png"
+                class="home-pasted-image07"
+              />
+              <img
+                alt="pastedImage"
+                src="public/playground_assets/pastedimage-deob-400w.png"
+                class="home-pasted-image08"
+              />
+            </div>
+          </div>
+          <div id="o1980" class="home-banner">
+            <div class="home-category4">
+              <div class="home-headng4">
+                <span class="home-text066">The Boycott</span>
+                <span class="home-text067">
+                  <span>
+                    Shown in the plot below is a line chart of medals over time
+                    for the USA.
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    Due to their boycott of the 1980 Summer Games, there is a
+                    drastic dip on the chart.
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    It also shows that in response to USA's 1980 boycott, the
+                    Soviet Union and most of the Eastern Bloc boycotted the 1984
+                    games. With their greatest competition absent, the USA
+                    experienced tremendous success in the 1984 games.
+                  </span>
+                  <br />
+                </span>
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-0u1t-300h.png"
+                  class="home-pasted-image09"
+                />
+              </div>
+            </div>
+            <div class="home-right2">
+              <span class="sub-title">"Miracle on Ice"</span>
+              <h2 class="home-text077 title">1980</h2>
+              <div class="home-category5">
+                <span class="home-text078">
+                  <span class="home-text079">Summer</span>
+                  <br />
+                  <span>
+                    The United States boycotted the 1980 Moscow Olympics along
+                    with 64 other countries in protest of the Soviet invasion of
+                    Afghanistan.
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    The Soviet Union, along with East Germany, won more than
+                    half of all medals.
+                  </span>
+                  <br />
+                  <br />
+                  <span class="home-text087">Winter (fun fact)</span>
+                  <br />
+                  <span>
+                    Dubbed “the miracle on ice”, the United States hockey team,
+                    composed of amateur and minor league players, toppled the
+                    heavily favored (and previously undefeated) Soviet team.
+                  </span>
+                  <br />
+                </span>
+                <img
+                  alt="pastedImage"
+                  src="public/playground_assets/pastedimage-ty8a-300h.png"
+                  class="home-pasted-image10"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="dashboard" class="home-integrations">
+          <h2 class="home-text091 title">Tableau Dashboard</h2>
+          <div>
+            <dangerous-html
+              html="<div class='tableauPlaceholder' id='viz1670013535450' style='position: relative'><noscript><a href='#'><img alt='Final Dashboard ' src='https://public.tableau.com/static/images/Gr/GroupProjectv4_16697530321800/FinalDashboard/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GroupProjectv4_16697530321800/FinalDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Gr/GroupProjectv4_16697530321800/FinalDashboard/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1670013535450');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='900px';vizElement.style.height='700px';} else { vizElement.style.width='900px';vizElement.style.height='700px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>"
+            ></dangerous-html>
+          </div>
+          <span class="home-text092">
+            <br />
+            <span>Please visit this</span>
+            <a
+              href="https://public.tableau.com/app/profile/corey.wang/viz/GroupProjectv4_16697530321800/FinalDashboard?publish=yes"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link09"
+            >
+              link
+            </a>
+            <span>if the embedded content isn't working.</span>
+          </span>
+        </section>
+        <section id="references" class="home-pricing">
+          <div class="home-centered-container">
+            <div class="home-heading">
+              <span class="home-text096 title">References</span>
+            </div>
+            <span class="home-text097">
+              <span>Olympic history taken from</span>
+              <a
+                href="https://olympics.com/en/olympic-games"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link10"
+              >
+                olympics.com
+              </a>
+              <br />
+              <br />
+              <span>Image sources:</span>
+              <br />
+              <a
+                href="https://www.nbcchicago.com/news/sports/tokyo-summer-olympics/what-the-first-olympic-stadium-looks-like-now-125-years-later/2582972/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link11"
+              >
+                Panathenaic stadium
+              </a>
+              <br />
+              <a
+                href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.rcinet.ca%2Fen%2F2017%2F01%2F25%2Fcanada-history-jan-25-1924-hockey-gold-at-the-first-winter-games%2F&amp;psig=AOvVaw1a7MVexkwr5MnepgaiOBzp&amp;ust=1670101608684000&amp;source=images&amp;cd=vfe&amp;ved=0CBAQjhxqFwoTCPDrlLrr2_sCFQAAAAAdAAAAABAI"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link12"
+              >
+                Canadian gold medal hockey team
+              </a>
+              <br />
+              <a
+                href="https://www.thoughtco.com/1948-olympics-in-london-1779602"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link13"
+              >
+                1948 Olympic Games
+              </a>
+              <br />
+              <a
+                href="https://media.cnn.com/api/v1/images/stellar/prod/120807084810-olympics-2012-boycott-moscow-1980.jpg?q=w_3602,h_2436,x_0,y_0,c_fill"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link14"
+              >
+                1980 Olympics crowd
+              </a>
+              <br />
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
